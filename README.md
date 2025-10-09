@@ -12,6 +12,13 @@ Cyrus is a focused, scriptable workflow for embedding a Metasploit Android Meter
 
 **An all-in-one tool for embedding reverse shell payloads into third party Android APKs. It’s designed for simplicity, versatility, and efficiency. By combining msfvenom (for payload generation), apktool (for APK decompilation and rebuilding), and intuitive automation, Cyrus allows penetration testers to focus on their tasks while it handles the technical intricacies of APK payload injection.**
 
+## Disclaimer
+
+- For ethical penetration testing and bug bounty work only.
+- Use only with explicit, written authorization; unauthorized access is illegal.
+- Provided AS IS, without warranty of any kind.
+- The authors/maintainers assume no responsibility or liability for misuse or damages.
+
 
 > Note: Cyrus does not sign APKs. You must sign `output/unsigned.apk` before installing on a device.
 
