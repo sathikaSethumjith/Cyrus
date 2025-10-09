@@ -16,7 +16,6 @@ source "./modules/rebuild.sh"
 source "./modules/encode.sh"
 source "./modules/cleanup.sh"
 source "./modules/metasploit.sh"
-source "./modules/obfuscapk.sh"
 
 # Basic dependency checks (no installs performed)
 check_dependencies() {
@@ -59,10 +58,9 @@ while true; do
   echo "3. Inject Payload"
   echo "4. Obfuscate Payload (smali rename)"
   echo "5. Rebuild APK (Unsigned)"
-  echo "6. Obfuscate APK with Obfuscapk"
-  echo "7. Launch Metasploit"
-  echo "8. Cleanup"
-  echo "9. Exit"
+  echo "6. Launch Metasploit"
+  echo "7. Cleanup"
+  echo "8. Exit"
   echo -ne "Enter your choice: "
   read choice
 
@@ -72,10 +70,9 @@ while true; do
   3) inject_payload ;;
   4) encode_payload ;;
   5) rebuild_apk ;;
-  6) obfuscapk_obfuscate ;;
-  7) launch_metasploit ;;
-  8) cleanup ;;
-  9) echo -e "${blue}[INFO] Exiting...${default}" && exit 0 ;;
+ 6) launch_metasploit ;;
+ 7) cleanup ;;
+ 8) echo -e "${blue}[INFO] Exiting...${default}" && exit 0 ;;
   *) echo -e "${red}[ERROR] Invalid choice. Please try again.${default}" ;;
   esac
 done

