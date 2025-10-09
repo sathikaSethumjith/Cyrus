@@ -115,7 +115,6 @@ cyrus/
 ### 4) Obfuscate Payload (smali rename)
 - Renames `com/metasploit/...` to `com/<suffix>/...` and updates smali/manifest references.
 - Input is validated: `[a-z0-9_]`, lowercase, not starting with a digit.
-- Example: `cyrus0x` → package `com.cyrus0x`.
 
 ### 5) Rebuild APK (Unsigned)
 - Rebuilds to `output/unsigned.apk`. You must sign this before install.
@@ -176,9 +175,7 @@ Cyrus does not generate keystores or install system tools.
 
 - Apktool/Java anomalies
   - If you hit resource decode issues, Java 17 or 11 are widely compatible with apktool.
-
-- Play Protect / AV
-  - Use test devices/environments where protections won’t interfere.
+    
 
 
 ## Remote/OTA Use (Port Forwarding)
@@ -216,33 +213,7 @@ You can run Cyrus handlers over the internet (OTA) by forwarding a TCP port from
 - Apktool by iBotPeaches and contributors
 - Metasploit Framework by Rapid7 and the community
 - Android reverse‑engineering community and tooling ecosystem
-<<<<<<< HEAD
-=======
 
-## Remote/OTA Use (Port Forwarding)
-
-You can run Cyrus handlers over the internet (OTA) by forwarding a TCP port from your router to your machine.
-
-- Pick a public endpoint
-  - Use your WAN IP (whatismyip) or a dynamic DNS hostname (e.g., DuckDNS/No-IP).
-- Forward a port on your router
-  - Create a TCP port-forward rule: `WAN:PORT -> LAN:<your-machine-IP>:PORT`.
-  - Prefer a high, unprivileged port (e.g., 44444) to avoid ISP blocks on 25/80/443.
-- Configure Cyrus/Metasploit
-  - Set `LHOST` to your public IP/hostname.
-  - Set `LPORT` to the forwarded port.
-  - Ensure your local firewall allows inbound on `LPORT`.
-- Verify connectivity
-  - From a cellular network or another ISP: `nc -vz <public-host> <LPORT>` or use an external port-check service.
-- NAT loopback
-  - Some routers don’t support hairpin NAT; if testing from the same LAN, use your LAN IP instead of the public hostname.
-- Security & ethics
-  - Only test on devices/APKs you have explicit permission to assess.
-  - Avoid well-known ports, enable rate limits where possible, and monitor for abuse.
-
-
-
-## TODO
 
 - Update antivirus evasion
 - Add reverse HTTP/HTTPS payload options
