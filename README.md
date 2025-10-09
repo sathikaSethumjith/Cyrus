@@ -57,7 +57,7 @@ msfvenom --version
 msfconsole --version
 ```
 
-## Layout
+## Tree
 
 ```
 cyrus/
@@ -83,14 +83,14 @@ cyrus/
 1. Place a target APK under `cyrus/APPS/`.
 2. From `cyrus/`, run `./cyrus.sh`.
 3. Follow the menu in order:
-   - 1) Decompile APK
-   - 2) Generate Payload
-   - 3) Inject Payload
-   - 4) Obfuscate Payload (smali rename)
-   - 5) Rebuild APK (Unsigned)
-   - 6) Obfuscate APK with Obfuscapk
-   - 7) Launch Metasploit
-   - 8) Cleanup
+   -  Decompile APK
+   -  Generate Payload
+   -  Inject Payload
+   -  Obfuscate Payload (smali rename)
+   -  Rebuild APK (Unsigned)
+   -  Obfuscate APK with Obfuscapk
+   -  Launch Metasploit
+   -  Cleanup
 4. Sign `output/unsigned.apk` and install on the device.
 5. Launch the host app once (or reboot) to trigger the payload.
 
