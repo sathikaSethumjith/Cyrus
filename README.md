@@ -215,6 +215,3 @@ You can run Cyrus handlers over the internet (OTA) by forwarding a TCP port from
 - Android reverse‑engineering community and tooling ecosystem
 
 
-- Update antivirus evasion
-- Add reverse HTTP/HTTPS payload options
->>>>>>> 628a1fb (feat: remove Obfuscapk option from menu; docs: drop Obfuscapk section and renumber steps; clean README merge markers)
