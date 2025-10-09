@@ -33,12 +33,6 @@ Cyrus is a focused, scriptable workflow for embedding a Metasploit Android Meter
 - Rebuilds the modified APK for signing and installation.
 - Starts a Metasploit handler with your chosen LHOST/LPORT.
 
-### Tools Cyrus Uses
-
-- Apktool — decode/encode APKs and smali
-- Metasploit Framework — `msfvenom` (payload), `msfconsole` (handler)
-- Java Runtime — required by apktool
-- Bash — orchestration and glue
 
 ## Requirements
 
