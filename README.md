@@ -187,66 +187,39 @@ Cyrus does not generate keystores or install system tools.
 - Play Protect / AV
   - Use test devices/environments where protections won’t interfere.
 
+
+## Remote/OTA Use (Port Forwarding)
+
+You can run Cyrus handlers over the internet (OTA) by forwarding a TCP port from your router to your machine.
+
+- Pick a public endpoint
+  - Use your WAN IP (whatismyip) or a dynamic DNS hostname (e.g., DuckDNS/No-IP).
+- Forward a port on your router
+  - Create a TCP port-forward rule: `WAN:PORT -> LAN:<your-machine-IP>:PORT`.
+  - Prefer a high, unprivileged port (e.g., 44444) to avoid ISP blocks on 25/80/443.
+- Configure Cyrus/Metasploit
+  - Set `LHOST` to your public IP/hostname.
+  - Set `LPORT` to the forwarded port.
+  - Ensure your local firewall allows inbound on `LPORT`.
+- Verify connectivity
+  - From a cellular network or another ISP: `nc -vz <public-host> <LPORT>` or use an external port-check service.
+- NAT loopback
+  - Some routers don’t support hairpin NAT; if testing from the same LAN, use your LAN IP instead of the public hostname.
+- Security & ethics
+  - Only test on devices/APKs you have explicit permission to assess.
+  - Avoid well-known ports, enable rate limits where possible, and monitor for abuse.
+
+
+
+## TODO
+
+- Update antivirus evasion
+- Add reverse HTTP/HTTPS payload options
+
+
 ## Credits & Inspirations
 
 - Inspired by backdoor-apk by dana-at-cp: https://github.com/dana-at-cp/backdoor-apk
 - Apktool by iBotPeaches and contributors
 - Metasploit Framework by Rapid7 and the community
 - Android reverse‑engineering community and tooling ecosystem
-
-## Remote/OTA Use (Port Forwarding)
-
-You can run Cyrus handlers over the internet (OTA) by forwarding a TCP port from your router to your machine.
-
-- Pick a public endpoint
-  - Use your WAN IP (whatismyip) or a dynamic DNS hostname (e.g., DuckDNS/No-IP).
-- Forward a port on your router
-  - Create a TCP port-forward rule: `WAN:PORT -> LAN:<your-machine-IP>:PORT`.
-  - Prefer a high, unprivileged port (e.g., 44444) to avoid ISP blocks on 25/80/443.
-- Configure Cyrus/Metasploit
-  - Set `LHOST` to your public IP/hostname.
-  - Set `LPORT` to the forwarded port.
-  - Ensure your local firewall allows inbound on `LPORT`.
-- Verify connectivity
-  - From a cellular network or another ISP: `nc -vz <public-host> <LPORT>` or use an external port-check service.
-- NAT loopback
-  - Some routers don’t support hairpin NAT; if testing from the same LAN, use your LAN IP instead of the public hostname.
-- Security & ethics
-  - Only test on devices/APKs you have explicit permission to assess.
-  - Avoid well-known ports, enable rate limits where possible, and monitor for abuse.
-
-
-<<<<<<< HEAD
-=======
-## Remote/OTA Use (Port Forwarding)
-
-You can run Cyrus handlers over the internet (OTA) by forwarding a TCP port from your router to your machine.
-
-- Pick a public endpoint
-  - Use your WAN IP (whatismyip) or a dynamic DNS hostname (e.g., DuckDNS/No-IP).
-- Forward a port on your router
-  - Create a TCP port-forward rule: `WAN:PORT -> LAN:<your-machine-IP>:PORT`.
-  - Prefer a high, unprivileged port (e.g., 44444) to avoid ISP blocks on 25/80/443.
-- Configure Cyrus/Metasploit
-  - Set `LHOST` to your public IP/hostname.
-  - Set `LPORT` to the forwarded port.
-  - Ensure your local firewall allows inbound on `LPORT`.
-- Verify connectivity
-  - From a cellular network or another ISP: `nc -vz <public-host> <LPORT>` or use an external port-check service.
-- NAT loopback
-  - Some routers don’t support hairpin NAT; if testing from the same LAN, use your LAN IP instead of the public hostname.
-- Security & ethics
-  - Only test on devices/APKs you have explicit permission to assess.
-  - Avoid well-known ports, enable rate limits where possible, and monitor for abuse.
-
-
-## TODO
-
-- Update antivirus evasion
-- Add reverse HTTP/HTTPS payload options
->>>>>>> d330805 (docs: add TODOs for AV evasion and reverse HTTP/HTTPS payloads)
-
-## TODO
-
-- Update antivirus evasion
-- Add reverse HTTP/HTTPS payload options
